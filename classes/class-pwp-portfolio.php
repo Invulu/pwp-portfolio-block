@@ -448,19 +448,21 @@ if ( ! class_exists( 'PWP_Portfolio_Block' ) ) {
 														<div class="pwp-text" style="text-align: <?php echo esc_html( $textalignment ); ?>;">
 
 															<?php if ( $porttitle ) { ?>
+																
+																<?php if ( $portlink ) { ?>
+																<a class="pwp-portfolio-link" rel="noreferrer" href="<?php echo ( esc_attr( $portlink ) ? esc_attr( get_the_permalink() ) : '#' ); ?>">
+																<?php } ?>
 																<<?php echo esc_html( $portheading ); ?> class="pwp-title" style="color:<?php echo esc_html( $port_title_color ); ?>">
-																	<?php if ( $portlink ) { ?>
-																	<a class="pwp-portfolio-link" rel="noreferrer" href="<?php echo ( esc_attr( $portlink ) ? esc_attr( get_the_permalink() ) : '#' ); ?>">
-																	<?php } ?>
-																		<?php the_title(); ?>
-																	<?php if ( $portlink ) { ?>
-																	</a>
-																	<?php } ?>
+																	<?php the_title(); ?>
 																</<?php echo esc_html( $portheading ); ?>>
+																<?php if ( $portlink ) { ?>
+																</a>
+																<?php } ?>
+																
 															<?php } ?>
 
 															<?php if ( $portcat ) { ?>
-															<p class="pwp-categories" style="color:<?php echo esc_html( $port_title_color ); ?>">
+															<p class="pwp-categories" style="color:<?php echo esc_html( $port_text_color ); ?>">
 															<?php
 																if ( 'jetpack-portfolio' === $post_type ) {
 																	global $post;
@@ -468,7 +470,7 @@ if ( ! class_exists( 'PWP_Portfolio_Block' ) ) {
 																	if ( !is_wp_error( $terms ) && !empty( $terms ) ) {
 																		$links = array();
 																		foreach ( $terms as $term ) {
-																			$links[] = '<a href="' . esc_url( get_term_link( $term ) ) . '" alt="' . esc_attr( sprintf( __( 'View all projects in %s', 'pwp-portfolio-block' ), $term->name ) ) . '">' . esc_html( $term->name ) . '</a>';
+																			$links[] = '<a href="' . esc_url( get_term_link( $term ) ) . '" style="color:' . esc_html( $port_text_color ) . ';" alt="' . esc_attr( sprintf( __( 'View all projects in %s', 'pwp-portfolio-block' ), $term->name ) ) . '">' . esc_html( $term->name ) . '</a>';
 																		}
 																		echo implode( ', ', $links );
 																	}
@@ -479,7 +481,7 @@ if ( ! class_exists( 'PWP_Portfolio_Block' ) ) {
 
 																	if ( ! empty( $categories ) ) {
 																		foreach( $categories as $category ) {
-																			$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'pwp-portfolio-block' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+																			$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" style="color:' . esc_html( $port_text_color ) . ';" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'pwp-portfolio-block' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
 																		}
 																		echo trim( $output, $separator );
 																	}

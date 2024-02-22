@@ -144,6 +144,8 @@
     description: __('Display a group of posts as a portfolio', 'pwp-portfolio-block'),
     icon: portfolioIcon,
     category: 'pwp-blocks',
+    // Define this property and there'll be a preview.
+    example: {},
     supports: {
       align: true,
       alignWide: true,

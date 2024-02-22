@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: PortfolioWP Portfolio Block
+ * Plugin Name: Portfolio Block PWP
  * Plugin URI: https://portfoliowp.com
  * Description: A WordPress Portfolio Block for the Gutenberg and Full Site editor. The block displays a selected post type in a masonry style portfolio layout with filterable categories. Additionally, options are included for changing colors, font sizes, layouts, styles, columns, and more.
  * Version: 1.0
@@ -159,6 +159,56 @@ if ( ! class_exists( 'PortfolioWP_Portfolio_Block' ) ) {
 			);
 		}
 	} // End of class.
+
+	/**
+	 * Include welcome screen content.
+	 *
+	 * @since    1.0.0
+	 */
+	function pwp_welcome_screen_content() {
+		include_once plugin_dir_path( __FILE__ ) . '/admin/pwp-welcome-page.php';
+	}
+
+	/**
+	 * Register PWP menu page.
+	 *
+	 * @since 1.0.0
+	 */
+	function pwp_welcome_screen() {
+
+		$icon_svg = 'data:image/svg+xml;base64,' . base64_encode(
+			'<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="120 10 40 40" xml:space="preserve">
+			<g>
+				<path fill="#a0a5aa" d="M144.128,11.221c-7.733,0-13.455,1.824-17.002,5.421c-8.137,8.252-5.41,17.112-4.38,19.634
+					c0.906,2.217,2.021,3.613,2.875,4.35l2.957-2.609l-0.278-13.13l2.999,10.728l4.374-3.86l0.438-10.677l1.894,8.617l10.528-8.433
+					l-8.292,10.76l8.57,1.933l-10.595,0.444l-3.776,4.422l10.614,3.049l-12.974-0.278l-2.522,2.956c0.092,0.11,0.194,0.228,0.315,0.344
+					c1.9,1.938,5.897,3.889,10.54,3.889c3.257,0,8.112-0.991,12.775-5.72c8.079-8.19,4.882-25.648,3.841-30.338
+					C154.816,12.222,149.721,11.221,144.128,11.221L144.128,11.221L144.128,11.221z"/>
+			</g>
+			</svg>'
+		);
+
+		// Add Menu Item.
+		add_menu_page(
+			esc_html__( 'Portfolio Block', 'pwp' ),
+			esc_html__( 'Portfolio Block', 'pwp' ),
+			'manage_options',
+			'pwp-portfolio-block',
+			'pwp_welcome_screen_content',
+			$icon_svg,
+			110
+		);
+
+		// Add Upgrade Link.
+		add_submenu_page(
+			'pwp-portfolio-block',
+			'Upgrade',
+			esc_html__( 'Upgrade', 'pwp' ),
+			'manage_options',
+			'https://portfoliowp.com'
+		);
+	}
+	// add_action( 'admin_menu', 'pwp_welcome_screen' );
 
 	PortfolioWP_Portfolio_Block::get_instance();
 }
