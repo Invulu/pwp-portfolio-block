@@ -22,11 +22,11 @@
 
 		</div>
 
-		<h2 class="admin-headline"><?php _e( 'PortfolioWP Portfolio Block', 'pwp' ); ?></h2>
+		<h2 class="admin-headline"><?php _e( 'PortfolioWP Portfolio Block', 'pwp-portfolio-block' ); ?></h2>
 
-		<p class="admin-tagline"><?php _e( 'Howdy ' ) ?><b><?php global $userdata, $current_user, $user_identity; echo $user_identity ?></b><?php printf( __( ', you\'re moments away from creating awesome portfolios on any page of your website!', 'pwp' ) ); ?></p>
+		<p class="admin-tagline"><?php _e( 'Howdy ' ) ?><b><?php global $userdata, $current_user, $user_identity; echo $user_identity ?></b><?php printf( __( ', you\'re moments away from creating awesome portfolios on any page of your website!', 'pwp-portfolio-block' ) ); ?></p>
 
-		<p><?php printf( __( 'Enter your email to receive important updates and information from <a href="%1$s" target="_blank">PortfolioWP</a>.', 'pwp' ), 'https://portfoliowp.com' ); ?></p>
+		<p><?php printf( __( 'Enter your email to receive important updates and information from <a href="%1$s" target="_blank">PortfolioWP</a>.', 'pwp-portfolio-block' ), 'https://portfoliowp.com' ); ?></p>
 
 		<div id="mc_embed_signup" class="clear" style="overflow: hidden; margin-bottom: 12px;">
 			<form action="//organicthemes.us1.list-manage.com/subscribe/post?u=7cf6b005868eab70f031dc806&amp;id=c3cce2fac0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -59,8 +59,8 @@
 					</svg>
 				</span>
 				<span class="info">
-					<h4><?php esc_html_e( 'Getting Started', 'pwp' ); ?></h4>
-					<p><?php esc_html_e( 'Review our guide to using the simple PortfolioWP Portfolio Block plugin.', 'pwp' ); ?></p>
+					<h4><?php esc_html_e( 'Getting Started', 'pwp-portfolio-block' ); ?></h4>
+					<p><?php esc_html_e( 'Review our guide to using the simple PortfolioWP Portfolio Block plugin.', 'pwp-portfolio-block' ); ?></p>
 				</span>
 			</a>
 
@@ -71,8 +71,8 @@
 					</svg>
 				</span>
 				<span class="info">
-					<h4><?php esc_html_e( 'Support Forums', 'pwp' ); ?></h4>
-					<p><?php esc_html_e( 'Have a question or found a bug? Let us know in the support forum.', 'pwp' ); ?></p>
+					<h4><?php esc_html_e( 'Support Forums', 'pwp-portfolio-block' ); ?></h4>
+					<p><?php esc_html_e( 'Have a question or found a bug? Let us know in the support forum.', 'pwp-portfolio-block' ); ?></p>
 				</span>
 			</a>
 
@@ -84,8 +84,8 @@
 					</svg>
 				</span>
 				<span class="info">
-					<h4><?php esc_html_e( 'Premium Patterns', 'pwp' ); ?></h4>
-					<p><?php esc_html_e( 'Go pro to get the awesome PortfolioWP Pro Theme with premium patterns for creating dynamic portfolios.', 'pwp' ); ?></p>
+					<h4><?php esc_html_e( 'Premium Patterns', 'pwp-portfolio-block' ); ?></h4>
+					<p><?php esc_html_e( 'Go pro to get the awesome PortfolioWP Pro Theme with premium patterns for creating dynamic portfolios.', 'pwp-portfolio-block' ); ?></p>
 				</span>
 			</a>
 

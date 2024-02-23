@@ -7,7 +7,7 @@
  * Author: PortfolioWP
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: pwp
+ * Text Domain: pwp-portfolio-block
  * Domain Path: /languages
  *
  * @package PortfolioWP Portfolio Block
@@ -189,8 +189,8 @@ if ( ! class_exists( 'PortfolioWP_Portfolio_Block' ) ) {
 
 		// Add Menu Item.
 		add_menu_page(
-			esc_html__( 'Portfolio Block', 'pwp' ),
-			esc_html__( 'Portfolio Block', 'pwp' ),
+			esc_html__( 'Portfolio Block', 'pwp-portfolio-block' ),
+			esc_html__( 'Portfolio Block', 'pwp-portfolio-block' ),
 			'manage_options',
 			'pwp-portfolio-block',
 			'pwp_welcome_screen_content',
@@ -202,7 +202,7 @@ if ( ! class_exists( 'PortfolioWP_Portfolio_Block' ) ) {
 		add_submenu_page(
 			'pwp-portfolio-block',
 			'Upgrade',
-			esc_html__( 'Upgrade', 'pwp' ),
+			esc_html__( 'Upgrade', 'pwp-portfolio-block' ),
 			'manage_options',
 			'https://portfoliowp.com'
 		);

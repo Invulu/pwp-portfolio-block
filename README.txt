@@ -1,5 +1,5 @@
 === PortfolioWP Portfolio Block ===
-Contributors: itsdavidmorgan, organicthemes
+Contributors: itsdavidmorgan, portfoliowp
 Donate link: https://portfoliowp.com
 Tags: gutenberg, blocks
 Stable tag: 1.0
@@ -8,7 +8,7 @@ Requires PHP: 7.0+
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress Portfolio Block for the Gutenberg and Full Site editor. The block displays a selected post type in a masonry style portfolio layout with filterable categories. Additionally, options are included for changing colors, font sizes, layouts, styles, columns, and more.
+A WordPress Portfolio Block for the Gutenberg and Full Site editor. The block displays a selected post type in a masonry style portfolio layout with filterable categories.
 
 == Description ==
 
