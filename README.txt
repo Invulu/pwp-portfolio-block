@@ -8,7 +8,7 @@ Requires PHP: 7.0+
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A collection of powerful blocks for the Gutenberg editor.
+A WordPress Portfolio Block for the Gutenberg and Full Site editor. The block displays a selected post type in a masonry style portfolio layout with filterable categories. Additionally, options are included for changing colors, font sizes, layouts, styles, columns, and more.
 
 == Description ==
 
@@ -28,10 +28,10 @@ Follow the simple steps below to begin using the PortfolioWP Portfolio Block:
 
 Note: This plugin relies on new WordPress features, so it requires WordPress version 5.9+ and PHP 7.0+
 
-1. Upload 'pwp-blocks-bundle' to the '/wp-content/plugins/' directory.
+1. Upload 'pwp-portfolio-block' to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to any post or page using the Gutenberg block editor.
-4. Search "Portfolio" to see the block amonst the list of available blocks.
+4. Search "Portfolio" to see the block amongst the list of available blocks.
 
 == Changelog ==
 
