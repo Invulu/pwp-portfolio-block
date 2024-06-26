@@ -273,6 +273,10 @@
         type: 'string',
         default: '#fff'
       },
+      portbgcolor: {
+        type: 'string',
+        default: '#fff'
+      },
       buttoncolor: {
         type: 'string',
         default: '#fff'
@@ -337,6 +341,7 @@
       var porttitlecolor = props.attributes.porttitlecolor
       var porttextcolor = props.attributes.porttextcolor
       var porticoncolor = props.attributes.porticoncolor
+      var portbgcolor = props.attributes.portbgcolor
       var buttoncolor = props.attributes.buttoncolor
       var buttonbg = props.attributes.buttonbg
       var buttongradient = props.attributes.buttongradient
@@ -455,6 +460,7 @@
               porttitlecolor: porttitlecolor,
               porttextcolor: porttextcolor,
               porticoncolor: porticoncolor,
+              portbgcolor: portbgcolor,
               buttoncolor: buttoncolor,
               buttonbg: buttonbg,
               buttongradient: buttongradient,
@@ -730,6 +736,12 @@
                 label: __('Pin Icon Color', 'pwp-portfolio-block'),
                 value: porticoncolor,
                 onChange: function (val) { props.setAttributes({ porticoncolor: val }) }
+              },
+              {
+                colors: colorOptions,
+                label: __('Background Color', 'pwp-portfolio-block'),
+                value: portbgcolor,
+                onChange: function (val) { props.setAttributes({ portbgcolor: val }) }
               },
               (filternav === true) && (
                 {

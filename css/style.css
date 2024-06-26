@@ -198,11 +198,6 @@
 	margin-top: 24px;
 	margin-bottom: 24px;
 }
-.pwp-filter-buttons,
-.pwp-filter-search {
-	margin-top: 6px;
-	margin-bottom: 6px;
-}
 .pwp-filter-buttons {
 	display: flex;
 	flex-wrap: wrap;
@@ -219,7 +214,7 @@
 	width: 100%;
 	min-width: 180px;
 	margin: 0px;
-	padding: 6px 8px;
+	padding: 12px;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
 }
@@ -245,6 +240,16 @@
 /************************************************
 	Style Presets
 ************************************************/
+
+.pwp-portfolio:not(.pwp-style-minimal) .pwp-content {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Minimal Style */
+
+.pwp-portfolio.pwp-style-minimal .pwp-portfolio-item {
+    background-color: transparent !important;
+}
 
 /* Modern Style */
 
@@ -331,7 +336,7 @@
 	opacity: 1;
 }
 .pwp-portfolio-item .pwp-content .pwp-categories {
-	margin: 8px 0 0 0;
+	margin: 6px 0 0 0;
 }
 .pwp-portfolio-item .pwp-content .pwp-categories > a {
 	font-size: 75%;

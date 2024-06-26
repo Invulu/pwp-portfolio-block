@@ -3,7 +3,7 @@
  * Plugin Name: Portfolio Block PWP
  * Plugin URI: https://portfoliowp.com
  * Description: A WordPress Portfolio Block for the Gutenberg and Full Site editor. The block displays a selected post type in a masonry style portfolio layout with filterable categories. Additionally, options are included for changing colors, font sizes, layouts, styles, columns, and more.
- * Version: 1.0
+ * Version: 1.0.0
  * Author: PortfolioWP
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html

@@ -158,6 +158,10 @@ if ( ! class_exists( 'PWP_Portfolio_Block' ) ) {
 					'type'    => 'string',
 					'default' => '#fff',
 				),
+				'portbgcolor'    => array(
+					'type'    => 'string',
+					'default' => '#fff',
+				),
 				'buttoncolor'      => array(
 					'type'    => 'string',
 					'default' => '#fff',
@@ -216,6 +220,7 @@ if ( ! class_exists( 'PWP_Portfolio_Block' ) ) {
 			$port_title_color   = ( isset( $att['porttitlecolor'] ) ) ? $att['porttitlecolor'] : '#fff';
 			$port_text_color    = ( isset( $att['porttextcolor'] ) ) ? $att['porttextcolor'] : '#fff';
 			$port_icon_color    = ( isset( $att['porticoncolor'] ) ) ? $att['porticoncolor'] : '#fff';
+			$port_bg_color      = ( isset( $att['portbgcolor'] ) ) ? $att['portbgcolor'] : '#fff';
 			$button_color       = ( isset( $att['buttoncolor'] ) ) ? $att['buttoncolor'] : '#fff';
 			$button_bg          = ( isset( $att['buttonbg'] ) ) ? $att['buttonbg'] : '';
 			$button_gradient    = ( isset( $att['buttongradient'] ) ) ? $att['buttongradient'] : '';
@@ -279,6 +284,11 @@ if ( ! class_exists( 'PWP_Portfolio_Block' ) ) {
 						background-image: <?php echo esc_html( $button_gradient ); ?>;
 						border-color: <?php echo esc_html( $button_bg ); ?>;
 					<?php } ?>
+				}
+				<?php } ?>
+				<?php if ( '' !== $port_bg_color ) { ?>
+				#<?php echo esc_html( $portfolioid ); ?> .pwp-portfolio-item {
+					background-color: <?php echo esc_html( $port_bg_color ); ?>;
 				}
 				<?php } ?>
 				<?php if ( false === $portcontent ) { ?>

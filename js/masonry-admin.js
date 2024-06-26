@@ -12,7 +12,7 @@
 
   /* Isotope --------------------- */
   function isotopeSetup () {
-    $('.pwp-portfolio, .pwp-posts').each(function (index, obj) {
+    $('.pwp-portfolio').each(function (index, obj) {
       var filterID = obj.getAttribute('data-id')
       var $grid = $('#' + filterID + ' .pwp-masonry-container.pwp-isotope')
       // Quick search regex
@@ -65,38 +65,33 @@
   }
 
   function subscribeToEditorChanges() {
-    if (wp.data.select('core/block-editor')) {
-      let lastKnownBlockCount = wp.data.select('core/block-editor').getBlockCount();
+    let lastKnownBlockCount = wp.data.select('core/block-editor').getBlockCount();
 
-      wp.data.subscribe(() => {
-        const blockEditor = wp.data.select('core/block-editor');
-        if (!blockEditor) {
-          return;
-        }
-        const currentBlockCount = blockEditor.getBlockCount();
-        const selectedBlock = blockEditor.getSelectedBlock();
+    wp.data.subscribe(() => {
+      const currentBlockCount = wp.data.select('core/block-editor').getBlockCount();
+      const selectedBlock = wp.data.select('core/block-editor').getSelectedBlock();
 
-        if (currentBlockCount !== lastKnownBlockCount || selectedBlock) {
-          lastKnownBlockCount = currentBlockCount;
-          setTimeout(() => {
-            isotopeSetup();
-            masonrySetup();
-          }, 1000); // Delay to ensure DOM updates are completed
-        }
-      });
-    }
+      if (currentBlockCount !== lastKnownBlockCount || selectedBlock) {
+        lastKnownBlockCount = currentBlockCount;
+        setTimeout(() => {
+          isotopeSetup();
+          masonrySetup();
+        }, 1000); // Delay to ensure DOM updates are completed
+      }
+    });
   }
 
   $(document).ready(() => {
-    if (window.wp && wp.data && wp.blocks && wp.data.select('core/block-editor')) {
-      isotopeSetup();
-      masonrySetup();
+    isotopeSetup()
+    masonrySetup()
+
+    if (wp.data && wp.blocks) {
       subscribeToEditorChanges();
     }
   });
 
   $(window).on('resize', () => {
-    isotopeSetup();
-    masonrySetup();
+    isotopeSetup()
+    masonrySetup()
   });
 })(jQuery, wp)
